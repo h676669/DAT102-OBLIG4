@@ -1,4 +1,6 @@
-package Oppgave1;
+package oppgave1;
 
 public class Bilskilt {
+    //
+
 }
