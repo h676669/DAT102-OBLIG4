@@ -18,6 +18,10 @@ public class Bilskilt {
 //
 //    worst case:
 //            1/2(1+(1/(1-0.4)²) = 1.9
+    // d)
+    /*
+    antall sammenligninger blir det samme som for worst case
+     */
 
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
