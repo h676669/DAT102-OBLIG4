@@ -4,6 +4,20 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 
 public class Bilskilt {
+    // c)
+//    For tabell a:
+//    best case:
+//            1/2(1+(1/(1-0.7)) = 2.2
+//
+//    worst case:
+//            1/2(1+(1/(1-0.7)²) = 6.1
+//
+//    tabell b:
+//    best case:
+//            1/2(1+(1/(1-0.4)) = 1.3
+//
+//    worst case:
+//            1/2(1+(1/(1-0.4)²) = 1.9
 
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
