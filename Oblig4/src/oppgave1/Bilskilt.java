@@ -34,6 +34,7 @@ public class Bilskilt {
         System.out.println();
     }
 
+    // alternativt en node som value
     // load factor 0.4
     private static void kjedetListe() {
         System.out.println("Kjeda lister – tabell med 10 posisjonar");
