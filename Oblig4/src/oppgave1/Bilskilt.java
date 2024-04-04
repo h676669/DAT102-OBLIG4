@@ -1,20 +1,46 @@
 package oppgave1;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
 
 public class Bilskilt {
-    //
 
-    private static final Set<String> BILSKILT = Set.of("EL65431, TA14374, ZX87181, EL47007, VV50000, UV14544, EL32944");
-    private static HashSet<String> hasj = HashSet.newHashSet(10);
+    private String[] HashListe;
 
-    public static void main(String[] args) {
-        hasj.add(BILSKILT.stream().toString());
+    public Bilskilt() {
+        HashListe = new String[10];
     }
 
+    private char HashFunksjon(String ord) {
+        int pos = reknePos(ord);
 
+        if (HashListe[pos] == null) {
+            HashListe[pos] = ord;
+            return ord.charAt(ord.length() - 1);
+        } else {
+            HashFunksjon(ord, pos + 1);
+        }
+        return '-';
+    }
 
+    private int reknePos(String ord) {
+        return Character.getNumericValue(ord.charAt(ord.length() - 1));
+    }
+
+    private void HashFunksjon(String ord, int pos) {
+        if (HashListe[pos] == null) {
+            HashListe[pos] = ord;
+        } else {
+            HashFunksjon(ord, pos + 1);
+        }
+    }
+
+    public void leggTil(String ord) {
+        HashFunksjon(ord);
+    }
+
+    public void skrivUt() {
+        for (String ord : HashListe) {
+            System.out.println(ord);
+        }
+    }
 }
-
-
