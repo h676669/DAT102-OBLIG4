@@ -7,9 +7,9 @@ public class Bilskilt {
 
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
-        openAdrLinProbe();
-        kjedetListe();
-        //f();
+        //openAdrLinProbe();
+        //kjedetListe();
+        f();
     }
 
 
@@ -79,15 +79,13 @@ public class Bilskilt {
         return Integer.parseInt(String.valueOf(string.charAt(string.length() - 1))) ;
     }
 
-    // ?????????
     private static int nyHash(String string) {
         int hash = 0;
         int n = string.length();
         for (int i = 0; i < n; i++) {
-            hash = 31 * hash + string.charAt(i);
+            hash =  2 * hash + string.charAt(i);
         }
-
-        return hash;
+        return hash % 20;
     }
 }
 
