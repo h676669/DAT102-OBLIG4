@@ -7,6 +7,9 @@ public class Bilskilt {
 
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
+
+        kjedetListe();
+
     }
 
 
@@ -36,7 +39,12 @@ public class Bilskilt {
                 bilLink.put(indx, new LinkedList<>());
                 bilLink.get(indx).add(s);
             }
-            bilLink.get(indx).add(s);
+            else {
+                bilLink.get(indx).add(s);
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(bilLink.get(i));
         }
     }
 
