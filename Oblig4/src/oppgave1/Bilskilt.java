@@ -7,12 +7,13 @@ public class Bilskilt {
 
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
-        //openAdrLinProbe();
-        //kjedetListe();
-        f();
+        openAdrLinProbe();
+        kjedetListe();
+        //f();
     }
 
 
+    // load factor 0.7
     private static void openAdrLinProbe() {
         System.out.println("Open adressering med linear probing, steglengde alltid 1");
         Hashtable<Integer, String> bilHasj = new Hashtable<>(10);
@@ -33,6 +34,7 @@ public class Bilskilt {
         System.out.println();
     }
 
+    // load factor 0.4
     private static void kjedetListe() {
         System.out.println("Kjeda lister – tabell med 10 posisjonar");
         Hashtable<Integer, LinkedList<String>> bilLink = new Hashtable<>(10);
