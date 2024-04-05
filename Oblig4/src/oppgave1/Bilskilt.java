@@ -106,6 +106,8 @@ public class Bilskilt {
         }
         return hash % 20;
     }
-}
+    private class node {
 
+    }
+}
 
