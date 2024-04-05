@@ -20,6 +20,11 @@ public class Main {
         bilskiltLinked.skrivUt();
 
 
+
+
+
+
+
         */
     }
 }
