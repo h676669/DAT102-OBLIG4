@@ -27,7 +27,8 @@ public class Bilskilt {
     public static void main(String[] args) {
         //openAdrLinProbe();
         //kjedetListe();
-        f();
+        //f();
+        bilNode();
     }
 
 
@@ -73,6 +74,38 @@ public class Bilskilt {
         System.out.println();
     }
 
+    private static void bilNode() {
+        System.out.println("Kjeda lister – tabell med 10 posisjonar");
+        Hashtable<Integer, node<String>> bilLink = new Hashtable<>(10);
+        node<String> currentNode;
+        for (String s : bilSkilt) {
+            int indx = hash(s);
+            if (bilLink.get(indx) == null) {
+                bilLink.put(indx, new node<>(s));
+            }
+            else {
+                currentNode = bilLink.get(indx);
+                while (currentNode.next != null) {
+                    currentNode = currentNode.next;
+                }
+                currentNode.next = new node<>(s);
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            if (bilLink.get(i) != null) {
+                currentNode = bilLink.get(i);
+                while (currentNode != null) {
+                    System.out.print(currentNode.data + ", ");
+                    currentNode = currentNode.next;
+                }
+                System.out.println();
+            } else {
+                System.out.println(bilLink.get(i));
+            }
+        }
+        System.out.println();
+    }
+
     private static void f() {
         System.out.println("press f to pay respect");
         Hashtable<Integer, String> bilHasj = new Hashtable<>(20);
@@ -106,8 +139,19 @@ public class Bilskilt {
         }
         return hash % 20;
     }
-    private class node {
 
+
+    private static class node<T>{
+        private T data;
+        private node<T> next;
+
+        public node(T data) {
+            this(data, null);
+        }
+        public node(T data, node<T> next) {
+            this.data = data;
+            this.next = next;
+        }
     }
 }
 
