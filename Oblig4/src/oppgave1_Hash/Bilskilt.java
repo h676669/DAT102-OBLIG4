@@ -1,4 +1,4 @@
-package oppgave1;
+package oppgave1_Hash;
 
 import java.util.Hashtable;
 import java.util.LinkedList;
