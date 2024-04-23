@@ -1,4 +1,4 @@
-package Uke15oppgave2.src.no.hvl.dat102;
+package Uke15_oppgave_2.src.no.hvl.dat102;
 
 public class BS_Tre<T extends Comparable<? super T>> extends BinaerTre<T> implements SoektreADT<T> {
 
