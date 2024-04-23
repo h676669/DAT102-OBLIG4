@@ -116,4 +116,30 @@ public class BS_Tre<T extends Comparable<? super T>> extends BinaerTre<T> implem
 			skrivVerdierRek(t.getHogre(), min, maks);
 		}
 	}
+
+	public void skrivVerdierOptimalisert(T nedre, T ovre) {
+		skrivVerdierRekOptimalisert(rot, nedre, ovre);
+	}
+	private void skrivVerdierRekOptimalisert(BinaerTreNode<T> t, T min, T maks) {
+		if (t != null) {
+			if (t.getElement().compareTo(maks) >= 0) {
+				skrivVerdierRekOptimalisert(t.getVenstre(), min, maks);
+				if (t.getElement().compareTo(min) > 0) {
+					System.out.print(t.getElement() + " ");
+				}
+			} else if (t.getElement().compareTo(maks) < 0) {
+				skrivVerdierRekOptimalisert(t.getHogre(), min, maks);
+				if (t.getElement().compareTo(maks) < 0) {
+					System.out.print(t.getElement() + " ");
+				}
+			} else {
+				skrivVerdierRek(t.getVenstre(), min, maks);
+				if ((t.getElement().compareTo(min) >= 0) &&
+						(t.getElement().compareTo(maks) <= 0)) {
+					System.out.print(t.getElement() + " ");
+				}
+				skrivVerdierRek(t.getHogre(), min, maks);
+			}
+		}
+	}
 }
