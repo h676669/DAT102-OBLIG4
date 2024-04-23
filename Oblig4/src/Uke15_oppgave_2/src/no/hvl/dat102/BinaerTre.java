@@ -1,11 +1,11 @@
-package Uke15oppgave2.src.no.hvl.dat102;
+package Uke15_oppgave_2.src.no.hvl.dat102;
 
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import Uke15oppgave2.src.no.hvl.dat102.lenketstabel.LenketStabel;
-import Uke15oppgave2.src.no.hvl.dat102.lenketstabel.StabelADT;
+import Uke15_oppgave_2.src.no.hvl.dat102.lenketstabel.LenketStabel;
+import Uke15_oppgave_2.src.no.hvl.dat102.lenketstabel.StabelADT;
 
 public class BinaerTre<T> implements BinaerTreADT<T> {
 	protected BinaerTreNode<T> rot;

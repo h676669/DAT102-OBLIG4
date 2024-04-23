@@ -1,4 +1,4 @@
-package Uke15oppgave2.src.no.hvl.dat102.lenketstabel;
+package Uke15_oppgave_2.src.no.hvl.dat102.lenketstabel;
 
 
 import java.util.EmptyStackException;

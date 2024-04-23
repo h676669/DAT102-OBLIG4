@@ -1,4 +1,4 @@
-package oppgave1_Hash;
+package Uke12_oppgave_1;
 
 import java.util.Hashtable;
 import java.util.LinkedList;
