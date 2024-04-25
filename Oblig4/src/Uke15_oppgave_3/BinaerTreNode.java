@@ -76,5 +76,23 @@ public class BinaerTreNode<T>{
 
         return hoydeForskjell <= 1;
     }
+    public void oppdaterHoyde() {
+        int venstreHoyde;
+        int hogreHoyde;
+
+        if (venstre == null) {
+            venstreHoyde = -1;
+        } else {
+            venstreHoyde = venstre.getHogdeU();
+        }
+
+        if (hogre == null) {
+            hogreHoyde = -1;
+        } else {
+            hogreHoyde = hogre.getHogdeU();
+        }
+
+        hogdeU = 1 + Math.max(venstreHoyde, hogreHoyde);
+    }
 
 }
