@@ -26,9 +26,9 @@ public class Bilskilt {
     private static String[] bilSkilt = {"EL65431", "TA14374", "ZX87181", "EL47007", "VV50000", "UV14544", "EL32944"};
     public static void main(String[] args) {
         //openAdrLinProbe();
-        //kjedetListe();
-        //f();
-        bilNode();
+        //SkjedetListe();
+        f();
+
     }
 
 
@@ -125,7 +125,6 @@ public class Bilskilt {
         }
         System.out.println();
     }
-
 
     private static int hash(String string) {
         return Integer.parseInt(String.valueOf(string.charAt(string.length() - 1))) ;
