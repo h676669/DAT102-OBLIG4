@@ -6,35 +6,28 @@ import java.util.List;
 
 public class HeapSort <T extends Comparable<? super T>> {
 
-    private static <T extends Comparable<? super T>> void reheap(T[] heap,int rootIndex, int lastIndex) {
-        boolean done = false;
-        T orphan = heap[rootIndex];
-        int leftChildIndex = 2* rootIndex + 1;
 
-        while(!done &&(leftChildIndex <= lastIndex)) {
-            int lagerChildIndex = leftChildIndex;
-            int rightChildIndex = leftChildIndex +1;
-            if((rightChildIndex <= lastIndex) && (heap[lagerChildIndex].compareTo(heap[rightChildIndex]) < 0)) {
-                lagerChildIndex = rightChildIndex;
-            }
-            if(orphan.compareTo(heap[lagerChildIndex]) < 0) {
-                heap[rootIndex] = heap[lagerChildIndex];
-                rootIndex = lagerChildIndex;
-                leftChildIndex = 2 * rootIndex + 1;
-            }else {
-                done = true;
-            }
+    private static <T extends Comparable<? super T>> void minHeapify(T[] heap, int rootIndex, int heapSize) {
+        int smallest = rootIndex;
+        int leftChildIndex = 2 * rootIndex + 1;
+        int rightChildIndex = 2 * rootIndex + 2;
+
+        if (leftChildIndex < heapSize && heap[leftChildIndex].compareTo(heap[smallest]) < 0)
+            smallest = leftChildIndex;
+
+        if (rightChildIndex < heapSize && heap[rightChildIndex].compareTo(heap[smallest]) < 0)
+            smallest = rightChildIndex;
+
+        if (smallest != rootIndex) {
+            swap(heap, rootIndex, smallest);
+            minHeapify(heap, smallest, heapSize);
         }
-        heap[rootIndex] = orphan;
     }
-    public static <T extends Comparable<? super T>> void heapSort(T[] array, int n) {
-        for (int rootIndex = n / 2 -1; rootIndex >= 0; rootIndex--) {
-            reheap(array, rootIndex, n - 1);
-            swap(array, 0, n - 1);
-        }
-        for (int lastIndex = n -2; lastIndex > 0; lastIndex--) {
-            reheap(array,0,lastIndex);
-            swap(array,0,lastIndex);
+
+    public static <T extends Comparable<? super T>> void MinHeap(T[] array) {
+        int heapSize = array.length;
+        for (int i = (heapSize / 2) - 1; i >= 0; i--) {
+            minHeapify(array, i, heapSize);
         }
     }
 
@@ -43,8 +36,16 @@ public class HeapSort <T extends Comparable<? super T>> {
         array[i] = array[j];
         array[j] = temp;
     }
-    public List<T> finMin(T[] array, int n) {
-        heapSort(array, n);
-        return new ArrayList<>(Arrays.asList(array).subList(0, n));
+
+    public List<T> finMin(T[] array, int k) {
+        MinHeap(array);
+        List<T> result = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            result.add(array[0]);
+            array[0] = array[array.length - i - 1];
+            minHeapify(array, 0, array.length - i - 1);
+        }
+        return result;
     }
 }
+
