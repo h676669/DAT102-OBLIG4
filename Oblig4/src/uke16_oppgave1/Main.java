@@ -13,8 +13,5 @@ public class Main {
         HeapSort<Integer> hs = new HeapSort<>();
         List<Integer>hjelp = hs.finMin(allah,4);
         System.out.println(hjelp);
-
     }
-
-
 }
