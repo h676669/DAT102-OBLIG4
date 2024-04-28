@@ -1,5 +1,9 @@
 package uke16_oppgave1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class HeapSort <T extends Comparable<? super T>> {
 
     private static <T extends Comparable<? super T>> void reheap(T[] heap,int rootIndex, int lastIndex) {
@@ -38,5 +42,9 @@ public class HeapSort <T extends Comparable<? super T>> {
         T temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+    public List<T> finMin(T[] array, int n) {
+        heapSort(array, n);
+        return new ArrayList<>(Arrays.asList(array).subList(0, n));
     }
 }

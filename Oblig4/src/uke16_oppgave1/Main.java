@@ -10,12 +10,9 @@ public class Main {
         List<Integer> toilet= k.finMin(allah,4);
         System.out.println(toilet);
 
-        //MaksHaug<Integer> allah2 = new MaksHaug<>();
-        //for (int i = 0; i < allah.length;i++){
-        //    allah2.leggTil(allah[i]);
-        //}
-        //HeapSort<Integer> hs = new HeapSort<>();
-        //hs.heapSort(allah2, allah2.getAntall());
+        HeapSort<Integer> hs = new HeapSort<>();
+        List<Integer>hjelp = hs.finMin(allah,4);
+        System.out.println(hjelp);
 
     }
 
